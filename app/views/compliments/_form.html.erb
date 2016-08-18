@@ -1,0 +1,21 @@
+<%= form_for(@compliment) do |f| %>
+  <% if @compliment.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@compliment.errors.count, "error") %> prohibited this compliment from being saved:</h2>
+
+      <ul>
+      <% @compliment.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :body %><br>
+    <%= f.text_area :body %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

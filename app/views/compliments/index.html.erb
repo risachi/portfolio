@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Compliments</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Body</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @compliments.each do |compliment| %>
+      <tr>
+        <td><%= compliment.body %></td>
+        <td><%= link_to 'Show', compliment %></td>
+        <td><%= link_to 'Edit', edit_compliment_path(compliment) %></td>
+        <td><%= link_to 'Destroy', compliment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Compliment', new_compliment_path %>
